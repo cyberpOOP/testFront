@@ -1,0 +1,28 @@
+<div class="wrapper" *ngIf="!!product">
+  <div class="product-details">
+    <h2>{{ product.name }}</h2>
+    <p>Quantity in Stock: {{ product.quantityInStock }}</p>
+    <p>Price: {{ product.price | currency : "USD" : "symbol" : "1.2-2" }}</p>
+
+    <button (click)="openEditProductModal()">Edit</button>
+    <button (click)="deleteProduct()">Delete</button>
+    <button (click)="openAddToOrderModal()">Add to Order</button>
+  </div>
+
+  <app-edit-product-modal
+    *ngIf="isEditProductModalOpen"
+    (closeModalEvent)="closeEditProductModal()"
+    (editProductEvent)="editProduct($event)"
+    [product]="product"
+  >
+  </app-edit-product-modal>
+
+  <app-add-to-order-modal
+    *ngIf="isAddToOrderModalOpen"
+    (closeModalEvent)="closeAddToOrderModal()"
+    (addToOrderEvent)="addToOrder($event)"
+  >
+  </app-add-to-order-modal>
+</div>
+
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>

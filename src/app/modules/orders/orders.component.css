@@ -1,0 +1,13 @@
+.orders-wrapper {
+    padding: 70px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notFound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}

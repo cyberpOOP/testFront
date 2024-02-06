@@ -1,0 +1,13 @@
+<div class="orders-wrapper" *ngIf="orders">
+  <app-order-card
+    *ngFor="let order of orders"
+    [order]="order"
+    (sendOrderEmitter)="handleOrderSending($event)"
+  ></app-order-card>
+
+  <div *ngIf="!orders.length" class="notFound">
+    <h1>No orders yet</h1>
+  </div>
+</div>
+
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>

@@ -1,0 +1,27 @@
+<section class="product-section-wrapper" *ngIf="products">
+  <div class="title">
+    <h1>Our Products</h1>
+    <div class="button-wrapper">
+      <button (click)="openAddProductModal()">Add Product</button>
+      <button (click)="renewProducts()">Renew Products</button>
+    </div>
+  </div>
+  <div class="content" *ngIf="products">
+    <app-product-card
+      *ngFor="let product of products"
+      [product]="product"
+    ></app-product-card>
+  </div>
+
+  <div *ngIf="!products.length" class="notFound">
+    <h1>No products yet</h1>
+  </div>
+
+  <app-add-product-modal
+    *ngIf="isAddProductModalOpen"
+    (closeModalEvent)="closeAddProductModal()"
+    (addProductEvent)="addProduct($event)"
+  ></app-add-product-modal>
+</section>
+
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>

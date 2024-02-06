@@ -1,0 +1,58 @@
+.order-item {
+  display: flex;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.order-info {
+  flex: 1;
+}
+
+.user-info {
+  flex: 1;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+strong {
+  color: #007bff;
+}
+
+.send-order-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.send-order-button:hover {
+  background-color: #45a049;
+}
+
+.send-order-button:active {
+  background-color: #398439;
+}
+
+.send-order-button[disabled] {
+  background-color: #ddd;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.send-order-button[disabled]:hover {
+  background-color: #ddd;
+}

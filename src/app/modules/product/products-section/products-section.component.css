@@ -1,0 +1,53 @@
+.product-section-wrapper {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:active {
+  background-color: #398439;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+  grid-gap: 20px;
+}
+
+.button-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.notFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}

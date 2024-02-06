@@ -1,0 +1,16 @@
+<div class="order-item">
+  <div class="order-info" *ngFor="let orderItem of order.orderItems">
+    <p><strong>Product Name:</strong> {{ orderItem.product.name }}</p>
+    <p><strong>Quantity:</strong> {{ orderItem.quantity }}</p>
+    <p>
+      <strong>Price:</strong>
+      {{ orderItem.product.price | currency : 'UAH' : 'symbol' : '1.2-2' }}
+    </p>
+  </div>
+  <div class="user-info">
+    <p><strong>User Name:</strong> {{ order.user.name }}</p>
+    <p><strong>User Email:</strong> {{ order.user.email }}</p>
+  </div>
+  
+  <button class="send-order-button" [disabled]="isOrderWaiting" (click)="sendOrder()">Send Order</button>
+</div>
